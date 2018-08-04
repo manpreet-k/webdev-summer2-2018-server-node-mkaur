@@ -42,11 +42,11 @@ module.exports = app => {
     }
 
     findUserByUsername = (req, res) => {
-        var username = req.params['username']
+        let username = req.params['username']
         userModel.findUserByUsername(username)
-            .then(function (user) {
-                res.json(user);
-            })
+                .then(function (user) {
+                    res.json(user);
+                })
     }
 
     app.get ('/currentUser', currentUser);
@@ -54,5 +54,5 @@ module.exports = app => {
     app.post('/login', login);
     app.post('/register', createUser);
     app.post('/logout', logout);
-    app.post('/api/user/:username/username', findUserByUsername);
+    app.get('/api/username/:username', findUserByUsername);
 };

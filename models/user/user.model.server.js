@@ -18,13 +18,12 @@ userModel
     .populate('sections')
     .exec()
 
-createUser = (user) => {
-    return userModel.create(user);
-}
+createUser = (user) =>
+userModel.create(user);
 
-findUserByUsername = (username) => {
+
+findUserByUsername = (username) =>
     userModel.findOne({username: username});
-}
 
 module.exports = {
     findUserByIdExpanded,
