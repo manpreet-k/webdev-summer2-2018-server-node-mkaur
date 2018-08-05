@@ -6,7 +6,7 @@ module.exports = function (app) {
     app.put('/api/section/:sectionId', updateSection);
     app.put('/api/section/:sectionId/enroll', enrollStudentInSection);
     app.delete('/api/section/:sectionId/unenroll', removeStudentFromSection);
-    app.delete('/api/student/section', findAllSectionsForStudent);
+    app.get('/api/student/section', findAllSectionsForStudent);
 
     var sectionModel = require('../models/section/section.model.server');
     var enrollmentModel = require('../models/enrollment/enrollment.model.server');
