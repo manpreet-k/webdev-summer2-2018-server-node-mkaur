@@ -49,10 +49,34 @@ module.exports = app => {
                 })
     }
 
+    profile = (req, res) => {
+        if (typeof req.session['currentUser'] === 'undefined') {
+            res.send(null);
+        }
+        else {
+            var userId = req.session['currentUser']._id;
+            userModel.findUserById(userId)
+                .then(function (user) {
+                    res.send(user);
+                })
+        }
+    }
+
+    updateUser = (req, res) => {
+        var user = req.body;
+        var userId = req.session['currentUser']._id;
+        userModel.updateUser(user, userId)
+            .then(function (user) {
+                res.json(user);
+            })
+    }
+
     app.get ('/currentUser', currentUser);
     app.get ('/api/user', findAllUsers);
     app.post('/login', login);
     app.post('/register', createUser);
     app.post('/logout', logout);
     app.get('/api/username/:username', findUserByUsername);
+    app.post('/profile', profile);
+    app.put('/api/user', updateUser);
 };
