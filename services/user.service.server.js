@@ -75,7 +75,7 @@ module.exports = app => {
     app.get ('/api/user', findAllUsers);
     app.post('/login', login);
     app.post('/register', createUser);
-    app.post('/logout', logout);
+    app.post('/api/logout', logout);
     app.get('/api/username/:username', findUserByUsername);
     app.post('/profile', profile);
     app.put('/api/user', updateUser);
