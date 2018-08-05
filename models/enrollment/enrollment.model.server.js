@@ -9,6 +9,7 @@ enrollmentModel.create(enrollment);
 findSectionsForStudent = (studentId) =>
 enrollmentModel
     .find({student: studentId})
+    .select('sections')
     .populate('section')
     .exec();
 
