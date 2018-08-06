@@ -4,7 +4,7 @@ var session = require('express-session')
 var bodyParser = require('body-parser')
 
 app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+    res.header("Access-Control-Allow-Origin", "http://localhost:4200, https://wbdv-angular-client-mkaur.herokuapp.com/");
     res.header("Access-Control-Allow-Credentials", "true");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
@@ -17,7 +17,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(session({
     resave: false,
     saveUninitialized: true,
-    secret: 'any string'
+    secret: 'any string',
+    rolling: true,
+    maxAge: Date.now() + (30 * 60*60 * 1000)
 }));
 
 const mongoose = require('mongoose');
