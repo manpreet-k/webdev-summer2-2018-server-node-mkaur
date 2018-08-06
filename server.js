@@ -21,7 +21,7 @@ app.use(session({
 }));
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://webdevuser:webdevuser@ds113732.mlab.com:13732/heroku_jg0gk386');
+mongoose.connect('mongodb://webdevuser:webdevuser1@ds113732.mlab.com:13732/heroku_jg0gk386');
 
 const userService = require('./services/user.service.server'); //(app);
 userService(app);
