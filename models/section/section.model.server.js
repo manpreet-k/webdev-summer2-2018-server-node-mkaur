@@ -8,12 +8,15 @@ sectionModel.create(section);
 findSectionsForCourse = (courseId) =>
 sectionModel.find({courseId: courseId});
 
+findSectionById = (sectionId) =>
+sectionModel.find({id: sectionId});
+
 deleteSection = (sectionId) =>
 sectionModel.findByIdAndRemove(sectionId)
 
 updateSection = (section) =>
 {
-    sectionModel.update({
+    return sectionModel.update({
             _id: section.id
         },
         {
@@ -44,5 +47,6 @@ module.exports = {
     deleteSection,
     updateSection,
     decrementSectionCapacity,
-    incrementSectionCapacity
+    incrementSectionCapacity,
+    findSectionById
 };

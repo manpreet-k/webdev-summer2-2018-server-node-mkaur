@@ -6,6 +6,8 @@ module.exports = mongoose.Schema({
     lastName: String,
     phone: String,
     email: String,
+    address: String,
+    isadmin: String,
     sections: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'SectionModel'}]

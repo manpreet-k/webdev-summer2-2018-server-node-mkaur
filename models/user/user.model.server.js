@@ -32,6 +32,8 @@ updateUser = (user, userId) =>
         $set: user
     });
 
+removeProfile = (profile) =>
+userModel.find(profile).remove().exec();
 
 module.exports = {
     findUserByIdExpanded,
@@ -40,5 +42,6 @@ module.exports = {
     findUserByCredentials,
     createUser,
     findUserByUsername,
-    updateUser
+    updateUser,
+    removeProfile
 };

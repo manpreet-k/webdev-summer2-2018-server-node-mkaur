@@ -71,12 +71,21 @@ module.exports = app => {
             })
     }
 
-    app.get ('/currentUser', currentUser);
+    deleteProfile = (req, res) => {
+        var user = req.session['currentUser'];
+        userModel.removeProfile(user)
+            .then(function (user) {
+                res.json(user);
+            })
+    }
+
+    app.get ('/api/currentUser', currentUser);
     app.get ('/api/user', findAllUsers);
-    app.post('/login', login);
-    app.post('/register', createUser);
+    app.post('/api/login', login);
+    app.post('/api/register', createUser);
     app.post('/api/logout', logout);
     app.get('/api/username/:username', findUserByUsername);
-    app.post('/profile', profile);
-    app.put('/api/user', updateUser);
+    app.get('/api/profile', profile);
+    app.put('/api/profile', updateUser);
+    app.delete('/api/profile', deleteProfile);
 };
