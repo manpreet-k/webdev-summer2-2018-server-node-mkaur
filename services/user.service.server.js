@@ -23,7 +23,7 @@ module.exports = app => {
             userModel.findUserByIdExpanded(currentUser._id)
                 .then(user => res.send(user))
         } else {
-            res.sendStatus(403)
+            res.json(null);
         }
     }
 
