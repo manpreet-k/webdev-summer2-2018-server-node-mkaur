@@ -60,7 +60,7 @@ module.exports = function (app) {
 
     function removeStudentFromSection(req, res) {
         var sectionId = req.params['kid'];
-        var studentId = req.session['sid'];
+        var studentId = req.params['sid'];
         var enrollment = {
             student: studentId,
             section: sectionId
@@ -79,7 +79,7 @@ module.exports = function (app) {
 
     function enrollStudentInSection(req, res) {
         var sectionId = req.params['kid'];
-        var studentId = req.session['sid'];
+        var studentId = req.params['sid'];
         var enrollment = {
             student: studentId,
             section: sectionId
@@ -97,7 +97,7 @@ module.exports = function (app) {
     }
 
     function findAllSectionsForStudent(req, res) {
-        var studentId = req.session['sid'];
+        var studentId = req.params['sid'];
         enrollmentModel
             .findSectionsForStudent(studentId)
             .then(function (enrollments) {
