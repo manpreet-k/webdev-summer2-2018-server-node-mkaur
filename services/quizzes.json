@@ -8,8 +8,9 @@
         "_id": "1",
         "title": "Create Student Repository",
         "instruction": "Create a repository called StudentRepository for model called Student that has Integer as Identity",
-        "description": "import com.jga.models.[Student];\n public interface [StudentRepository] extends CrudRepository <[Student], [Integer]> { }",
-        "points": "10"
+        "blanks": ["import com.jga.models.","*1=Student",";\n public interface ","*2=StudentRepository", " extends CrudRepository <", "*3=Student", "4=*Integer","> { }"],
+        "points": "10",
+        "answer": ["Student", "StudentRepository", "Student"]
       },
       {
         "type": "truefalse",
@@ -52,8 +53,9 @@
         "_id": "5",
         "title": "Creatinng a React Component",
         "instruction": "Create a React component called ModuleList that contains a list of 3 items called ModuleListItem",
-        "description": "<import React, [Component] from 'react';\n export default class [ModuleList] extends [Component] { \n [render]() { \n return (   <ul >\n     <ModuleListItem/>  \n   <ModuleListItem/>   \n  <ModuleListItem/>  \n   <ModuleListItem/>  \n   <ModuleListItem/> \n    <ModuleListItem/>\n</ul>);}}",
-        "points": "10"
+        "blanks": ["<import React, ", "*1=Component", "from 'react';\n export default class ", "*2=ModuleList", "extends ", "*3=Component", "{ \n ", "*4=render()", "{ \n return (   <ul >\n     <ModuleListItem/>  \n   <ModuleListItem/>   \n  <ModuleListItem/>  \n   <ModuleListItem/>  \n   <ModuleListItem/> \n    <ModuleListItem/>\n</ul>);}}"],
+        "points": "10",
+        "answer": ["Component", "ModuleList", "Component", "render"]
       },
       {
         "type": "truefalse",
