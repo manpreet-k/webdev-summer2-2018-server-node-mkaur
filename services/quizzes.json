@@ -8,7 +8,7 @@
         "_id": "1",
         "title": "Create Student Repository",
         "instruction": "Create a repository called StudentRepository for model called Student that has Integer as Identity",
-        "blanks": ["import com.jga.models.","*1=Student",";\n public interface ","*2=StudentRepository", " extends CrudRepository <", "*3=Student", "4=*Integer","> { }"],
+        "blanks": ["import com.jga.models.","*1=Student",";\n public interface ","*2=StudentRepository", " extends CrudRepository <", "*3=Student", ", ", "*4=Integer","> { }"],
         "points": "10",
         "answer": ["Student", "StudentRepository", "Student"]
       },
