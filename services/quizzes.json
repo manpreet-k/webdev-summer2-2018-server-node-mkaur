@@ -10,7 +10,7 @@
         "instruction": "Create a repository called StudentRepository for model called Student that has Integer as Identity",
         "blanks": ["import com.jga.models.","*1=Student",";\n public interface ","*2=StudentRepository", " extends CrudRepository <", "*3=Student", ", ", "*4=Integer","> { }"],
         "points": "10",
-        "answer": ["Student", "StudentRepository", "Student"]
+        "answer": {"1":"Student", "2":"StudentRepository", "3":"Student", "4":"Integer"}
       },
       {
         "type": "truefalse",
@@ -55,7 +55,7 @@
         "instruction": "Create a React component called ModuleList that contains a list of 3 items called ModuleListItem",
         "blanks": ["<import React, ", "*1=Component", "from 'react';\n export default class ", "*2=ModuleList", "extends ", "*3=Component", "{ \n ", "*4=render()", "{ \n return (   <ul >\n     <ModuleListItem/>  \n   <ModuleListItem/>   \n  <ModuleListItem/>  \n   <ModuleListItem/>  \n   <ModuleListItem/> \n    <ModuleListItem/>\n</ul>);}}"],
         "points": "10",
-        "answer": ["Component", "ModuleList", "Component", "render"]
+        "answer": {"1":"Component", "2":"ModuleList", "3":"Component", "4":"render"}
       },
       {
         "type": "truefalse",
@@ -88,17 +88,5 @@
         "answer": "<Link to='/hello'>Hello</Link> <Route path='/hello' component={HelloWorld}/> "
       }
     ]
-  },
-  {
-    "_id": "345",
-    "name": "quiz 3"
-  },
-  {
-    "_id": "456",
-    "name": "quiz 4"
-  },
-  {
-    "_id": "567",
-    "name": "quiz 5"
   }
 ]

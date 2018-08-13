@@ -6,9 +6,7 @@ module.exports = app => {
 
     function findAllQuizzes(req, res) {
         let result = JSON.parse(JSON.stringify(quizzes));
-        console.log(result);
         result.forEach(function(v){ delete v.questions });
-        console.log(quizzes);
         res.json(result);
     }
 
