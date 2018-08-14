@@ -1,18 +1,46 @@
 module.exports = app => {
-    var quizzes = require('./quizzes.json');
 
+    const quizModel = require('../models/quiz/quiz.model.server');
+
+    createQuiz = (req, res) => {
+        console.log(req.body);
+        quizModel.createQuiz(req.body)
+            .then(quiz => res.send(quiz))
+    }
+
+    findAllQuizzes = (req, res) => {
+        quizModel.findAllQuizzes()
+            .then(quizzes => res.send(quizzes))
+    }
+
+    findQuizById = (req, res) => {
+        quizModel.findQuizById(req.params.qid)
+            .then(quiz => res.send(quiz))
+    }
+
+    updateQuiz = (req, res) => {
+        quizModel.updateQuiz(req.params.qid, req.body)
+            .then(status => res.send(status))
+    }
+
+    deleteQuiz = (req, res) => {
+        quizModel.deleteQuiz(req.params.qid)
+            .then(status => res.send(status))
+    }
+
+    addQuestion = (req, res) => {
+        quizModel
+            .addQuestion(req.params.qid, req.params.questionId)
+            .then(
+                status => res.send(status),
+            error => res.send(error)
+    )
+    }
+
+    app.post('/api/quiz', createQuiz);
     app.get('/api/quiz', findAllQuizzes);
-    app.get('/api/quiz/:quizId', findQuizById);
-
-    function findAllQuizzes(req, res) {
-        let result = JSON.parse(JSON.stringify(quizzes));
-        result.forEach(function(v){ delete v.questions });
-        res.json(result);
-    }
-
-    function findQuizById(req, res) {
-        var quiz = quizzes.filter(function (q) {
-            return q._id == req.params.quizId });
-        res.json(quiz[0]);
-    }
-};
+    app.get('/api/quiz/:qid', findQuizById);
+    app.put('/api/quiz/:qid', updateQuiz);
+    app.delete('/api/quiz/:qid', deleteQuiz);
+    app.put('/api/quiz/:qid/question/:questionId', addQuestion);
+}
