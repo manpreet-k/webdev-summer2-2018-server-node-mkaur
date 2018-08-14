@@ -1,5 +1,5 @@
 module.exports = app => {
-    var submissionModel = require('../models/quiz/submission.model.server');
+    var submissionModel = require('../models/submission/submission.model.server');
 
     app.post('/api/quiz/:quizId/submission', submitQuiz);
     app.get('/api/quiz/:quizId/submission', findSubmissionsForQuiz);
