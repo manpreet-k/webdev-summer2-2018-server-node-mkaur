@@ -5,6 +5,7 @@ var bodyParser = require('body-parser')
 
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "https://wbdv-angular-client-mkaur.herokuapp.com");
+    // res.header("Access-Control-Allow-Origin", "http://localhost:4200");
     res.header("Access-Control-Allow-Credentials", "true");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
@@ -29,5 +30,8 @@ const userService = require('./services/user.service.server'); //(app);
 userService(app);
 
 require('./services/section.service.server')(app);
+require('./services/quiz.service.server')(app);
+require('./services/submission.service.server')(app);
+require('./services/question.service.server')(app);
 
 app.listen(process.env.PORT || 3000)

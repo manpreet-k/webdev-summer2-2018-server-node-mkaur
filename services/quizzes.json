@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "1",
+    "name": "quiz 1",
+    "questions": [
+      {
+        "type": "fillin",
+        "_id": "1",
+        "title": "Create Student Repository",
+        "instruction": "Create a repository called StudentRepository for model called Student that has Integer as Identity",
+        "blanks": ["import com.jga.models.","*1=Student",";\n public interface ","*2=StudentRepository", " extends CrudRepository <", "*3=Student", ", ", "*4=Integer","> { }"],
+        "points": "10",
+        "answer": {"1":"Student", "2":"StudentRepository", "3":"Student", "4":"Integer"}
+      },
+      {
+        "type": "truefalse",
+        "_id": "2",
+        "title": "JPA Relations",
+        "instructions": "Mark the following statement as true or false",
+        "description": "@JsonIgnore prevents circular dependency",
+        "points": "10",
+        "answer": "true"
+      },
+      {
+        "type": "multiplechoice",
+        "_id": "3",
+        "title": "Manipulating an element's style",
+        "description": "Use an elements style property to manipulate it's text color",
+        "options": [
+          "theElement.style.color = 'red'",
+          "theElement.style.background = 'red'",
+          "theElement.style.background-color = 'red'"
+        ],
+        "points": "10",
+        "answer": "theElement.style.color = 'red'"
+      },
+      {
+        "type": "essay",
+        "_id": "4",
+        "title": "JavaScript objects ",
+        "description": "Create a variable 'house', describing a house with 3 rooms, 3 baths and 1300 square feet. Use the following properties names 'rooms', 'baths', and 'sqf'.",
+        "points": "10",
+        "answer": "var house = { rooms: 3, baths: 3, sqf: 1300 }; "
+      }
+    ]
+  },
+  {
+    "_id": "2",
+    "name": "quiz 2",
+    "questions": [
+      {
+        "type": "fillin",
+        "_id": "5",
+        "title": "Creatinng a React Component",
+        "instruction": "Create a React component called ModuleList that contains a list of 3 items called ModuleListItem",
+        "blanks": ["<import React, ", "*1=Component", "from 'react';\n export default class ", "*2=ModuleList", "extends ", "*3=Component", "{ \n ", "*4=render()", "{ \n return (   <ul >\n     <ModuleListItem/>  \n   <ModuleListItem/>   \n  <ModuleListItem/>  \n   <ModuleListItem/>  \n   <ModuleListItem/> \n    <ModuleListItem/>\n</ul>);}}"],
+        "points": "10",
+        "answer": {"1":"Component", "2":"ModuleList", "3":"Component", "4":"render"}
+      },
+      {
+        "type": "truefalse",
+        "_id": "6",
+        "title": "JPA Relations",
+        "instructions": "Mark the following statement as true or false",
+        "description": "@JsonIgnore is mandatory while defining foreign key relations",
+        "points": "10",
+        "answer": "false"
+      },
+      {
+        "type": "multiplechoice",
+        "_id": "7",
+        "title": "Parameterize the module's title",
+        "description": "Get the title of the module as the parameter 'title' passed from the parent component",
+        "options": [
+          "{this.props.title}",
+          "{this.title}",
+          "{this.params.title}"
+        ],
+        "points": "10",
+        "answer": "{this.props.title}"
+      },
+      {
+        "type": "essay",
+        "_id": "8",
+        "title": "React Routing",
+        "description": "Add route to path '/hello' for the component 'HelloWorld' and add a link to this path ",
+        "points": "10",
+        "answer": "<Link to='/hello'>Hello</Link> <Route path='/hello' component={HelloWorld}/> "
+      }
+    ]
+  }
+]
